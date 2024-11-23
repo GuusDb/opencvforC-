@@ -8,25 +8,21 @@ using namespace std;
 using namespace cv;
 
 
-// resize and crop
-
 int main()
 {
-	string imagePath = "Resources/test.png";
-	Mat img = imread(imagePath);
-	Mat imgResize, imgCrop;
+	// Blank image
+	Mat img(512, 512, CV_8UC3, Scalar(255, 255, 255));
 
-	// Resize image
-	resize(img, imgResize, Size(), 0.5, 0.5);
-
-	// Cropping - roi = region of intrest
-	Rect roi(200, 100, 300, 300);
-	imgCrop = img(roi);
-
+	// Create circle
+	circle(img, Point(256, 256), 155, Scalar(0, 69, 255), FILLED);
+	// rectangle
+	rectangle(img, Point(130, 226), Point(382, 286), Scalar(255, 255, 255), FILLED);
+	// Line
+	line(img, Point(130, 296), Point(382, 296), Scalar(255, 255, 255), 2);
+	// Put text
+	putText(img, "Love Buky", Point(137, 267), FONT_HERSHEY_DUPLEX, 0.75, Scalar(0, 69, 255), 2);
 
 	imshow("Image", img);
-	imshow("Image Resize", imgResize);
-	imshow("Image Crop", imgCrop);
 
 	waitKey(0);
 	return 0;
