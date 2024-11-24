@@ -40,7 +40,7 @@ int main()
 
 		// Detect faces in the frame
 		vector<Rect> faces;
-		faceCascade.detectMultiScale(gray, faces, 1.1, 10);
+		faceCascade.detectMultiScale(gray, faces, 1.2, 5, 0, Size(30, 30));
 
 		// Draw rectangles around detected faces
 		for (Rect face : faces) {
