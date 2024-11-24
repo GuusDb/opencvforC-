@@ -19,7 +19,7 @@ int main()
 	// To gray
 	cvtColor(img, imgGray, COLOR_BGR2GRAY);
 	// Blurring
-	GaussianBlur(img, imgBlur, Size(3, 3), 3, 0);
+	GaussianBlur(imgGray, imgBlur, Size(3, 3), 3, 0);
 	// Edge detection
 	Canny(imgBlur, imgCanny, 25, 75);
 	// dilate and erode it
